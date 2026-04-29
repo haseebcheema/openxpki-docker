@@ -1,0 +1,12 @@
+# Public keys to authenticate requests over the CLI interface
+# the name of the key is only used for logging purposes
+# the keys can be generated using `oxi cli create`
+# read the keys from the credential manager
+auth:
+  admin:
+    key: |
+      -----BEGIN PUBLIC KEY-----
+      MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQcHfd8flTuFpgdSq9YMoE+9MuoxF
+      HHnemXoeTKp3h+GB++3P4SCOPt770OY0aWqOTOvR8RlEbUcWopi39v/CeA==
+      -----END PUBLIC KEY-----
+    role: RA Operator

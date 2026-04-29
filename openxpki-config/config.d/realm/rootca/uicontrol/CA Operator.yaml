@@ -1,0 +1,27 @@
+landmark:
+  welcome: workflow!task
+main:
+  - key: home
+    label: I18N_OPENXPKI_UI_MENU_HOME
+    icon: glyphicon-home
+    entries:
+      - key:    workflow!task
+        label:  I18N_OPENXPKI_UI_MENU_MY_TASK
+      - key:    workflow!mine
+        label:  I18N_OPENXPKI_UI_MENU_MY_WORKFLOW
+  - key: pkiadm
+    label: I18N_OPENXPKI_UI_MENU_PKI_OPERATION
+    icon: glyphicon-wrench
+    entries:
+      - key:   workflow!start!wf_type!crl_issuance
+        label: I18N_OPENXPKI_UI_MENU_CRL_ISSUE
+      - key:   workflow!start!wf_type!ca_publish
+        label: I18N_OPENXPKI_UI_MENU_PUBLISH_CA_CRL
+  - key:   info
+    label: I18N_OPENXPKI_UI_MENU_INFORMATION
+    icon: glyphicon-info-sign
+    entries:
+      - key:   information!issuer
+        label: I18N_OPENXPKI_UI_MENU_CA_CERTIFICATES
+      - key:   crl!index
+        label: I18N_OPENXPKI_UI_MENU_CRL

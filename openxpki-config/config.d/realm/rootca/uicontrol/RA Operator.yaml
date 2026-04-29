@@ -1,0 +1,78 @@
+landmark:
+  welcome: workflow!task
+
+main:
+  - key: home
+    label: I18N_OPENXPKI_UI_MENU_HOME
+    icon: glyphicon-home
+    entries:
+      - key:    workflow!task
+        label:  I18N_OPENXPKI_UI_MENU_MY_TASK
+      - key:    workflow!mine
+        label:  I18N_OPENXPKI_UI_MENU_MY_WORKFLOW
+      - key:    certificate!mine
+        label:  I18N_OPENXPKI_UI_MENU_MY_CERTIFICATE
+
+  - key: pkiadm
+    label: I18N_OPENXPKI_UI_MENU_PKI_OPERATION
+    icon: glyphicon-wrench
+    entries:
+      - key:   workflow!index!wf_type!crl_issuance
+        label: I18N_OPENXPKI_UI_MENU_CRL_ISSUE
+      - key:   workflow!start!wf_type!ca_publish
+        label: I18N_OPENXPKI_UI_MENU_PUBLISH_CA_CRL
+
+  - key:   info
+    label: I18N_OPENXPKI_UI_MENU_INFORMATION
+    icon: glyphicon-info-sign
+    entries:
+      - key:   information!issuer
+        label: I18N_OPENXPKI_UI_MENU_CA_CERTIFICATES
+      - key:   crl!index
+        label: I18N_OPENXPKI_UI_MENU_CRL
+      - key:   workflow!start!wf_type!status_system
+        label: I18N_OPENXPKI_UI_MENU_SYSTEM_STATUS
+
+  - key:   certificate!search
+    label: I18N_OPENXPKI_UI_MENU_CERTIFICATE_SEARCH
+    icon: glyphicon-search
+
+  - key:   workflow!search
+    label: I18N_OPENXPKI_UI_MENU_WORKFLOW_SEARCH
+    icon: glyphicon-search
+
+  - key:   bulk
+    label: I18N_OPENXPKI_UI_MENU_BULK
+    icon: glyphicon-forward
+
+tasklist:
+  - label: I18N_OPENXPKI_UI_TASKLIST_PENDING_ENROLLMENT_LABEL
+    description: I18N_OPENXPKI_UI_TASKLIST_PENDING_ENROLLMENT_DESCRIPTION
+    ifempty: hide
+    query:
+      type:
+        - certificate_enroll
+      state:
+        - PENDING
+        - PENDING_POLICY_VIOLATION
+        - MANUAL_AUTHORIZATION
+    cols:
+      - label: I18N_OPENXPKI_UI_WORKFLOW_SEARCH_SERIAL_LABEL
+        field: WORKFLOW_SERIAL
+      - label: I18N_OPENXPKI_UI_WORKFLOW_SEARCH_UPDATED_LABEL
+        field: WORKFLOW_LAST_UPDATE
+      - label: I18N_OPENXPKI_UI_WORKFLOW_STATE_LABEL
+        field: WORKFLOW_STATE
+      - label: I18N_OPENXPKI_UI_CERTIFICATE_SUBJECT
+        field: context.cert_subject
+      - label: I18N_OPENXPKI_UI_WORKFLOW_FIELD_TRANSACTION_ID_LABEL
+        field: attribute.transaction_id
+
+  - label: I18N_OPENXPKI_UI_TASKLIST_PENDING_REVOCATION_LABEL
+    description: I18N_OPENXPKI_UI_TASKLIST_PENDING_REVOCATION_DESCRIPTION
+    ifempty: hide
+    query:
+      type:
+        - certificate_revocation_request_v2
+      state:
+        - PENDING
