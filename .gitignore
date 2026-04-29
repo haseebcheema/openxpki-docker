@@ -1,5 +1,4 @@
 packages
-openxpki-config/
 openxpki/
 config/*
 Makefile.local
